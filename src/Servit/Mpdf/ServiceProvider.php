@@ -4,7 +4,10 @@ namespace Servit\Mpdf;
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 //use TFox\MpdfPortBundle\Service\MpdfService as mPDF;
 
+$errorlevel = error_reporting();
 include base_path('vendor/mpdf/mpdf/mpdf.php');
+error_reporting($errorlevel);
+unset($errorlevel);
 
 
 class ServiceProvider extends BaseServiceProvider {
